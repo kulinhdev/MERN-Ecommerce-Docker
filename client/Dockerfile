@@ -2,7 +2,7 @@
 FROM node:latest
 
 # Set the working directory
-WORKDIR /
+WORKDIR /app  
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 3000
 
 # Serve the app with a static server
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "start" ]

@@ -2,12 +2,11 @@
 FROM node:latest
 
 # Set the working directory for the server
-WORKDIR /
+WORKDIR /app
 
 # Copy package.json and package-lock.json to the server container
 COPY package*.json ./
 
-# Install server dependencies
 RUN npm install
 
 COPY . .
