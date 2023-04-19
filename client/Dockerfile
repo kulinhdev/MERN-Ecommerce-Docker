@@ -16,4 +16,4 @@ COPY . .
 EXPOSE 3000
 
 # Serve the app with a static server
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "dev" ]

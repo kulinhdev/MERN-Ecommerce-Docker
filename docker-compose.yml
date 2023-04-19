@@ -21,6 +21,7 @@ services:
       - '${FRONTEND_PORT:-3003}:3000'
     depends_on:
       - backend
+    restart: always
     volumes:
       - ./client:/app
     networks:
