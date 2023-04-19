@@ -2,7 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const productRoutes = require("./routes/productRoutes");
 const connectToDatabase = require("./db/connect");
-require("dotenv").config();
+const configs = require("./config/keys");
+
+console.log("configs", configs);
 
 const app = express();
 
@@ -27,8 +29,8 @@ app.get("*", (req, res) => {
 	res.send({ code: 404, error: "Request Not Found!" });
 });
 
-const listen_port = process.env.LISTEN_PORT || 5000;
-const expose_port = process.env.EXPOSE_PORT || 5005;
+const listen_port = configs.listenPort || 5000;
+const expose_port = configs.exposePort || 5005;
 
 // Listen port from docker server
 app.listen(listen_port);
