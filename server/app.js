@@ -28,7 +28,10 @@ app.get("*", (req, res) => {
 	res.send({ code: 404, error: "Request Not Found!" });
 });
 
-const port = process.env.PORT || 5005;
-app.listen(port);
+const listen_port = process.env.LISTEN_PORT || 5000;
+const expose_port = process.env.EXPOSE_PORT || 5005;
 
-console.log(`App is listening on port: http://localhost:${port}`);
+// Listen port from docker server
+app.listen(listen_port);
+
+console.log(`App is listening on port: http://localhost:${expose_port}`);
