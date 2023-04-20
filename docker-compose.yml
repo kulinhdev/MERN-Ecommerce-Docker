@@ -28,12 +28,12 @@ services:
       - app-network
 
   db:
-    image: mongo:latest
-    # restart: always
+    image: mongo:6.0.5
     ports:
       - '27017:27017'
+    restart: always
     volumes:
-      - mongo-data:/data/db
+      - ./mongo/data:/data/db
     networks:
       - app-network
 
